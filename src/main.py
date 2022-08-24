@@ -1,6 +1,6 @@
 import requests
 from consts import *
-from ext import *
+from lib import *
 
 infos()
 
@@ -48,14 +48,14 @@ final = round(argent - depot + retrait, 2)
 bonus = round(bonus, 2)
 
 #DERNIERE VALEUR
-consts = open('./TortugaHelper/src/consts.py', 'r')
+consts = open('./consts.py', 'r')
 if not lastvalue == final:    
     vals = []
     for i in consts:
         if i == 'lastvalue = ' + str(lastvalue):
             i = i.replace('lastvalue = '+ str(lastvalue),'lastvalue = '+str(final))
         vals.append(i)
-    file = open('./TortugaHelper/src/consts.py', 'w')
+    file = open('./consts.py', 'w')
     file.writelines(vals)
 else:
     pareil = True

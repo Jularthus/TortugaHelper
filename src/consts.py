@@ -1,3 +1,4 @@
-mail = "@"
-pwd = "a"
-lastvalue = 239.97
+mail = ""
+pwd = ""
+lastvalue = 0
+lastlastvalue = 0

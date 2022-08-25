@@ -1,15 +1,8 @@
 import requests
 from consts import *
 from lib import *
-
-infos()
-
-# TOKEN
-burp0_url = "https://api.tortugacasino.com:443/auth/v3/api/auth/login"
-burp0_headers = {"Content-Type": "application/json", "Accept": "application/json, text/plain, */*", "Accept-Encoding": "gzip, deflate", "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"}
-burp0_json={"password": pwd, "username": mail}
-login = requests.post(burp0_url, headers=burp0_headers, json=burp0_json)
-token = login.json()['token']
+#NE PAS ECRIRE QUAND LA VALEUR RESTE LA MEME
+token = getToken()
 
 #DEPOT
 burp0_url = "https://api.tortugacasino.com:443/common/v8/api/graphql?op=paymentTransactions"

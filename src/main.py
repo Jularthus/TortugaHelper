@@ -54,10 +54,10 @@ if not lastvalue == final:
     vals = []
     for i in consts:
         if i == 'lastvalue = ' + str(lastvalue):
-            i = i.replace('lastvalue = '+ str(lastvalue),'lastvalue = '+str(final))
+            i = i.replace('lastvalue = '+ str(lastvalue),'lastvalue = '+ str(final))
         vals.append(i)
-    file = open('./consts.py', 'w')
-    file.writelines(vals)
+    print(vals)
+    open('./consts.py', 'w').writelines(vals)
 else:
     pareil = True
 

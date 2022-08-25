@@ -1,3 +1,3 @@
-mail = "kis.olivier94@gmail.com"
-pwd = "Labrador94190!"
-lastvalue = 150
+mail = "@"
+pwd = "q"
+lastvalue = 179.66

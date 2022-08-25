@@ -1,3 +1,4 @@
+from distutils.dep_util import newer_pairwise
 from getpass import getpass
 from consts import *
 import requests
@@ -7,8 +8,7 @@ def majInfos():
         try:
             return(login(newmail, newpwd))
         except:
-            #print('\n----------------------------------\nVos identifiants sont invalides !\n----------------------------------\n')
-            print('')
+            print('\n----------------------------------\nVos identifiants sont invalides !\n----------------------------------\n')
         conf = ""
         while True:
             newmail = str(input('Quel est votre adresse email Tortuga ?\n'))
@@ -46,5 +46,3 @@ def login(email, passw):
     login = requests.post(burp0_url, headers=burp0_headers, json=burp0_json)
     token = login.json()['token']
     return(token)
-
-majInfos()

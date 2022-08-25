@@ -2,7 +2,11 @@ import requests
 from consts import *
 from lib import *
 #NE PAS ECRIRE QUAND LA VALEUR RESTE LA MEME
-token = getToken()
+
+try:
+    token = login(mail, pwd)
+except:
+    majInfos()
 
 #DEPOT
 burp0_url = "https://api.tortugacasino.com:443/common/v8/api/graphql?op=paymentTransactions"

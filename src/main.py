@@ -6,7 +6,7 @@ from lib import *
 try:
     token = login(mail, pwd)
 except:
-    majInfos()
+    token = majInfos()
 
 #DEPOT
 burp0_url = "https://api.tortugacasino.com:443/common/v8/api/graphql?op=paymentTransactions"

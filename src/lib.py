@@ -3,13 +3,12 @@ from consts import *
 import requests
 
 def majInfos():
-    token = ''
-    while not token:
+    while True:
         try:
-            token = login(newmail, newpwd)
-            return(token)
+            return(login(newmail, newpwd))
         except:
-            print('\n----------------------------------\nVos identifiants sont invalides !\n----------------------------------\n')
+            #print('\n----------------------------------\nVos identifiants sont invalides !\n----------------------------------\n')
+            print('')
         conf = ""
         while True:
             newmail = str(input('Quel est votre adresse email Tortuga ?\n'))
@@ -29,7 +28,7 @@ def majInfos():
                 print('Les deux mots de passe n\'étaient pas les mêmes')
             newpwd = getpass('Quel est votre mot de passe Tortuga ? ')
             conf = getpass('Retapez votre mot de passe : ')
-        consts = open('./consts.py', 'r')
+        consts = open('consts.py', 'r')
         vals = []
         for i in consts:
             if 'mail = "' in i:
@@ -37,9 +36,8 @@ def majInfos():
             if 'pwd = "' in i:
                 i = 'pwd = ' + f'"{newpwd}"\n'
             vals.append(i)
-            print(vals)
-        file = open('./consts.py', 'w')
-        file.writelines(vals)
+        open('consts.py', 'w').writelines(vals)
+
 
 def login(email, passw):
     burp0_url = "https://api.tortugacasino.com:443/auth/v3/api/auth/login"
@@ -48,3 +46,5 @@ def login(email, passw):
     login = requests.post(burp0_url, headers=burp0_headers, json=burp0_json)
     token = login.json()['token']
     return(token)
+
+majInfos()

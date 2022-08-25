@@ -28,6 +28,7 @@ def majInfos():
                 print('Les deux mots de passe n\'étaient pas les mêmes')
             newpwd = getpass('Quel est votre mot de passe Tortuga ? ')
             conf = getpass('Retapez votre mot de passe : ')
+            print('\n')
         consts = open('consts.py', 'r')
         vals = []
         for i in consts:

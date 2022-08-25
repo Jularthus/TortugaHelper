@@ -1,8 +1,12 @@
 import requests
 from consts import *
 from lib import *
+from os import system
 #NE PAS ECRIRE QUAND LA VALEUR RESTE LA MEME
-
+try:
+    system("title " + "TortugaHelper by Aqua")
+except:
+    pass
 try:
     token = login(mail, pwd)
 except:
@@ -66,8 +70,10 @@ if final > 0 and lastvalue<final:
 elif final > 0 and lastvalue>final:
     print(f'T\'es en bénéfice de {final}€ avec un bonus de {bonus}€ !\nC\'est {moins}€ de moins que la dernière fois, t\'as merdé mais demain tu te refais oklm !')
 elif final < 0 and lastvalue<final:
-    print(f'Bon mon salaud, t\'as bien perdu te sous là, {final}€ ça fait pas grand chose pour se nourrir...\nAu moins c\'est plus que la dernière fois, tu te rattrapes de {plus}€.')
+    print(f'Bon mon salaud, t\'as bien perdu tes sous là, {final}€ ça fait pas grand chose pour se nourrir...\nAu moins c\'est plus que la dernière fois, tu te rattrapes de {plus}€.')
 elif final < 0 and lastvalue>final:
-    print(f'Bon mon salaud, t\'as bien perdu te sous là, {final}€ ça fait pas grand chose pour se nourrir...\nD\'ailleurs c\'est encore moins que la dernière fois, t\'as perdu {moins}€, vas postuler à Pôle Emploi dès maintenant...')
-elif lastvalue==final:
+    print(f'Bon mon salaud, t\'as bien perdu tes sous là, {final}€ ça fait pas grand chose pour se nourrir...\nD\'ailleurs c\'est encore moins que la dernière fois, t\'as perdu {moins}€, vas postuler à Pôle Emploi dès maintenant...')
+elif pareil:
     print(f'T\'as pas joué depuis la dernière fois, donc t\'es toujours à {final}€.')
+
+input('\n\nAppuyer sur une touche pour fermer...')
